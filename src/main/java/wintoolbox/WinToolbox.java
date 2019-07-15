@@ -8,4 +8,8 @@ public class WinToolbox {
     public static native boolean ChangeVolume(double nVolume, boolean bScalar);
 
     public static native double GetCurVolume(boolean bScalar);
+
+    public static native boolean ShowWindow(byte[]wClassName,byte[] wTitle);
+
+
 }

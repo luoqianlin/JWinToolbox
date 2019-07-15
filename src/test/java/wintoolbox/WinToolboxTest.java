@@ -3,8 +3,11 @@ package wintoolbox;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
@@ -31,6 +34,16 @@ public class WinToolboxTest extends Application {
                 double v=newValue.doubleValue();
                 System.out.println(v);
                 WinToolbox.ChangeVolume(v,true);
+            }
+        });
+        Button button=new Button("显示");
+        group.getChildren().add(button);
+        button.relocate(30,40);
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                boolean b = WinToolbox.ShowWindow("OSKMainClass".getBytes(), null);
+                System.out.println(b);
             }
         });
         primaryStage.setScene(scene);
